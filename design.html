@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <%= csrf_meta_tags %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => false %>
+    <meta name="viewport" content="user-scalable=no,width=device-width" />
+    <style>
+        * {
+        box-sizing: border-box;
+    }
+    
+    body {
+        margin: 0;
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+    
+    .full-width {
+        width: 100% !important;
+    }
+    
+    button, input, select, textarea {
+      font-size: inherit;
+      font-family: inherit;
+      line-height: inherit;
+    }
+    
+    @media (min-width: 750px) {
+        .column {
+            float: left;
+        }
+    
+        .section:after {
+            content:"";
+            display:table;
+            clear:both;
+        }
+    
+        .content {
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+    
+    .b-0 {
+      margin-top: 0px;
+    }
+    
+    .layout-493830713661114 {
+      background: rgb(255, 250, 248);
+    }
+    
+    .text-6243978519830329 {
+      min-height: 100px;
+      font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+      color: rgb(255, 111, 68);
+      font-size: 70px;
+      font-weight: normal;
+      font-style: normal;
+      text-decoration: none;
+      text-align: center;
+    }
+    
+    .text-08641163098856852 {
+      min-height: 25px;
+      color: rgb(183, 76, 46);
+      font-size: 16px;
+      font-weight: normal;
+      font-style: normal;
+      text-decoration: none;
+      text-align: center;
+    }
+    
+    .image-5100161907843876 {
+      background-size: cover;
+    }
+    
+    .image-5205237804820233 {
+      margin-left: 0px;
+      background-size: cover;
+    }
+    
+    .image-5977604736289774 {
+      margin-left: 0px;
+      background-size: cover;
+    }
+    
+    .image-5451970893743281 {
+      margin-left: 0px;
+      background-size: cover;
+    }
+    
+    .image-03852373009412324 {
+      margin-left: 0px;
+      background-size: cover;
+    }
+    
+    .image-02652372092366284 {
+      margin-left: 0px;
+      background-size: cover;
+    }
+    
+    .text-8087621577719633 {
+      min-height: 57px;
+      font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+      color: rgb(183, 76, 46);
+      font-size: 40px;
+      font-weight: normal;
+      font-style: normal;
+      text-decoration: none;
+      text-align: center;
+    }
+    
+    .text-19997884417218126 {
+      min-height: 42px;
+      font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+      color: rgb(183, 76, 46);
+      font-size: 22px;
+      font-weight: normal;
+      font-style: normal;
+      text-decoration: none;
+      text-align: center;
+    }
+    
+    .layout-39268181529503066 {
+      background: linear-gradient(to bottom, rgb(255, 250, 248), rgba(255, 111, 68, 0.56));
+    }
+    
+    .image-9920844072763388 {
+      background-size: cover;
+    }
+    
+    .b-0-0-4-0-0-1 {
+      margin-left: 0px;
+    }
+    
+    .text-5320398504312698 {
+      min-height: 38px;
+      font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+      color: rgba(183, 76, 46, 0.63);
+      font-size: 23px;
+      font-weight: normal;
+      font-style: normal;
+      text-decoration: none;
+    }
+    
+    .text-5262554756531714 {
+      min-height: 396px;
+      font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+      color: rgb(183, 76, 46);
+      font-size: 22px;
+      font-weight: normal;
+      font-style: normal;
+      text-decoration: none;
+    }
+    
+    .text-0468601400898645 {
+      min-height: 38px;
+      font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+      color: rgba(183, 76, 46, 0.62);
+      font-size: 23px;
+      font-weight: normal;
+      font-style: normal;
+      text-decoration: none;
+      text-align: right;
+    }
+    
+    .image-47231286038309817 {
+      background-size: cover;
+    }
+    
+    .text-325680083626384 {
+      min-height: 66px;
+      color: rgb(183, 76, 46);
+      font-size: 16px;
+      font-weight: normal;
+      font-style: normal;
+      text-decoration: none;
+      text-align: center;
+    }
+    
+    @media (min-width: 750px) and (max-width: 970px) {
+        .layout-493830713661114 {
+          padding-bottom: 28px;
+          margin-left: NaNpx;
+          width: 750px;
+        }
+        
+        .b-0-0-0 {
+          margin-top: 33px;
+        }
+        
+        .text-6243978519830329 {
+          margin-left: 215px;
+          width: 318px;
+        }
+        
+        .b-0-0-1 {
+          margin-top: 17px;
+        }
+        
+        .text-08641163098856852 {
+          margin-left: 215px;
+          width: 295px;
+        }
+        
+        .b-0-0-2 {
+          margin-top: 23px;
+        }
+        
+        .image-5100161907843876 {
+          margin-left: 1px;
+          width: 124px;
+        }
+        
+        .image-5205237804820233 {
+          width: 118px;
+        }
+        
+        .image-5977604736289774 {
+          width: 118px;
+        }
+        
+        .image-5451970893743281 {
+          width: 118px;
+        }
+        
+        .image-03852373009412324 {
+          width: 132px;
+        }
+        
+        .image-02652372092366284 {
+          width: 135px;
+        }
+        
+        .b-0-0-3 {
+          margin-top: 10px;
+        }
+        
+        .text-8087621577719633 {
+          margin-left: 249px;
+          width: 222px;
+        }
+        
+        .b-0-0-3-1 {
+          margin-left: 50px;
+          width: 198px;
+        }
+        
+        .b-0-0-3-1-0 {
+          margin-top: 40px;
+        }
+        
+        .text-19997884417218126 {
+          margin-left: NaNpx;
+          width: 198px;
+        }
+        
+        .b-0-0-4 {
+          margin-top: 5px;
+        }
+        
+        .layout-39268181529503066 {
+          padding-bottom: 134px;
+          margin-left: 0px;
+          width: 749px;
+        }
+        
+        .b-0-0-4-0-0 {
+          margin-top: 38px;
+        }
+        
+        .b-0-0-4-0-0-0 {
+          margin-left: 26px;
+          width: 38px;
+        }
+        
+        .b-0-0-4-0-0-0-0 {
+          margin-top: 202px;
+        }
+        
+        .image-9920844072763388 {
+          margin-left: NaNpx;
+          width: 38px;
+        }
+        
+        .b-0-0-4-0-0-1 {
+          width: 51px;
+        }
+        
+        .b-0-0-4-0-0-1-0 {
+          margin-top: 241px;
+        }
+        
+        .text-5320398504312698 {
+          margin-left: NaNpx;
+          width: 51px;
+        }
+        
+        .text-5262554756531714 {
+          margin-left: 48px;
+          width: 396px;
+        }
+        
+        .b-0-0-4-0-0-3 {
+          margin-left: 22px;
+          width: 100px;
+        }
+        
+        .b-0-0-4-0-0-3-0 {
+          margin-top: 239px;
+        }
+        
+        .text-0468601400898645 {
+          margin-left: NaNpx;
+          width: 100px;
+        }
+        
+        .b-0-0-4-0-0-4 {
+          margin-left: 8px;
+          width: 37px;
+        }
+        
+        .b-0-0-4-0-0-4-0 {
+          margin-top: 199px;
+        }
+        
+        .image-47231286038309817 {
+          margin-left: NaNpx;
+          width: 37px;
+        }
+        
+        .b-0-0-4-0-1 {
+          margin-top: 265px;
+        }
+        
+        .text-325680083626384 {
+          margin-left: 226px;
+          width: 295px;
+        }
+        
+        .content {
+          width: 750px;
+        }
+    }
+    
+    @media (min-width: 970px) and (max-width: 1170px) {
+        .layout-493830713661114 {
+          padding-bottom: 0px;
+          margin-left: 0px;
+          width: 970px;
+        }
+        
+        .b-0-0-0 {
+          margin-top: 43px;
+        }
+        
+        .text-6243978519830329 {
+          margin-left: 279px;
+          width: 412px;
+        }
+        
+        .b-0-0-1 {
+          margin-top: 22px;
+        }
+        
+        .text-08641163098856852 {
+          margin-left: 279px;
+          width: 382px;
+        }
+        
+        .b-0-0-2 {
+          margin-top: 30px;
+        }
+        
+        .image-5100161907843876 {
+          margin-left: 2px;
+          width: 161px;
+        }
+        
+        .image-5205237804820233 {
+          width: 153px;
+        }
+        
+        .image-5977604736289774 {
+          width: 153px;
+        }
+        
+        .image-5451970893743281 {
+          width: 153px;
+        }
+        
+        .image-03852373009412324 {
+          width: 171px;
+        }
+        
+        .image-02652372092366284 {
+          width: 175px;
+        }
+        
+        .b-0-0-3 {
+          margin-top: 14px;
+        }
+        
+        .text-8087621577719633 {
+          margin-left: 323px;
+          width: 288px;
+        }
+        
+        .b-0-0-3-1 {
+          margin-left: 65px;
+          width: 257px;
+        }
+        
+        .b-0-0-3-1-0 {
+          margin-top: 52px;
+        }
+        
+        .text-19997884417218126 {
+          margin-left: 0px;
+          width: 257px;
+        }
+        
+        .b-0-0-4 {
+          margin-top: 7px;
+        }
+        
+        .layout-39268181529503066 {
+          padding-bottom: 44px;
+          margin-left: 1px;
+          width: 969px;
+        }
+        
+        .b-0-0-4-0-0 {
+          margin-top: 50px;
+        }
+        
+        .b-0-0-4-0-0-0 {
+          margin-left: 34px;
+          width: 50px;
+        }
+        
+        .b-0-0-4-0-0-0-0 {
+          margin-top: 266px;
+        }
+        
+        .image-9920844072763388 {
+          margin-left: 0px;
+          width: 50px;
+        }
+        
+        .b-0-0-4-0-0-1 {
+          width: 66px;
+        }
+        
+        .b-0-0-4-0-0-1-0 {
+          margin-top: 312px;
+        }
+        
+        .text-5320398504312698 {
+          margin-left: 0px;
+          width: 66px;
+        }
+        
+        .text-5262554756531714 {
+          margin-left: 63px;
+          width: 513px;
+        }
+        
+        .b-0-0-4-0-0-3 {
+          margin-left: 28.5px;
+          width: 130px;
+        }
+        
+        .b-0-0-4-0-0-3-0 {
+          margin-top: 311px;
+        }
+        
+        .text-0468601400898645 {
+          margin-left: 0px;
+          width: 130px;
+        }
+        
+        .b-0-0-4-0-0-4 {
+          margin-left: 11px;
+          width: 49px;
+        }
+        
+        .b-0-0-4-0-0-4-0 {
+          margin-top: 264px;
+        }
+        
+        .image-47231286038309817 {
+          margin-left: 0px;
+          width: 49px;
+        }
+        
+        .b-0-0-4-0-1 {
+          margin-top: 343px;
+        }
+        
+        .text-325680083626384 {
+          margin-left: 293px;
+          width: 382px;
+        }
+        
+        .content {
+          width: 970px;
+        }
+    }
+    
+    @media (min-width: 1170px) {
+        .layout-493830713661114 {
+          padding-bottom: -21px;
+          margin-left: NaNpx;
+          width: 1170px;
+        }
+        
+        .b-0-0-0 {
+          margin-top: 51px;
+        }
+        
+        .text-6243978519830329 {
+          margin-left: 336px;
+          width: 496px;
+        }
+        
+        .b-0-0-1 {
+          margin-top: 26px;
+        }
+        
+        .text-08641163098856852 {
+          margin-left: 336px;
+          width: 460px;
+        }
+        
+        .b-0-0-2 {
+          margin-top: 36px;
+        }
+        
+        .image-5100161907843876 {
+          margin-left: 2px;
+          width: 194px;
+        }
+        
+        .image-5205237804820233 {
+          width: 184px;
+        }
+        
+        .image-5977604736289774 {
+          width: 184px;
+        }
+        
+        .image-5451970893743281 {
+          width: 184px;
+        }
+        
+        .image-03852373009412324 {
+          width: 206px;
+        }
+        
+        .image-02652372092366284 {
+          width: 211px;
+        }
+        
+        .b-0-0-3 {
+          margin-top: 16px;
+        }
+        
+        .text-8087621577719633 {
+          margin-left: 389px;
+          width: 347px;
+        }
+        
+        .b-0-0-3-1 {
+          margin-left: 78px;
+          width: 309px;
+        }
+        
+        .b-0-0-3-1-0 {
+          margin-top: 62px;
+        }
+        
+        .text-19997884417218126 {
+          margin-left: NaNpx;
+          width: 309px;
+        }
+        
+        .b-0-0-4 {
+          margin-top: 8px;
+        }
+        
+        .layout-39268181529503066 {
+          padding-bottom: -36px;
+          margin-left: 1px;
+          width: 1168px;
+        }
+        
+        .b-0-0-4-0-0 {
+          margin-top: 60px;
+        }
+        
+        .b-0-0-4-0-0-0 {
+          margin-left: 40px;
+          width: 60px;
+        }
+        
+        .b-0-0-4-0-0-0-0 {
+          margin-top: 319px;
+        }
+        
+        .image-9920844072763388 {
+          margin-left: NaNpx;
+          width: 60px;
+        }
+        
+        .b-0-0-4-0-0-1 {
+          width: 79px;
+        }
+        
+        .b-0-0-4-0-0-1-0 {
+          margin-top: 373px;
+        }
+        
+        .text-5320398504312698 {
+          margin-left: NaNpx;
+          width: 79px;
+        }
+        
+        .text-5262554756531714 {
+          margin-left: 75px;
+          width: 618px;
+        }
+        
+        .b-0-0-4-0-0-3 {
+          margin-left: 34px;
+          width: 156px;
+        }
+        
+        .b-0-0-4-0-0-3-0 {
+          margin-top: 373px;
+        }
+        
+        .text-0468601400898645 {
+          margin-left: NaNpx;
+          width: 156px;
+        }
+        
+        .b-0-0-4-0-0-4 {
+          margin-left: 13px;
+          width: 59px;
+        }
+        
+        .b-0-0-4-0-0-4-0 {
+          margin-top: 317px;
+        }
+        
+        .image-47231286038309817 {
+          margin-left: NaNpx;
+          width: 59px;
+        }
+        
+        .b-0-0-4-0-1 {
+          margin-top: 413px;
+        }
+        
+        .text-325680083626384 {
+          margin-left: 353px;
+          width: 460px;
+        }
+        
+        .content {
+          width: 1170px;
+        }
+    }
+    
+    @media (max-width: 750px) {
+        .column {
+            float: none;
+        }
+    
+        * {
+            margin: 0 !important;
+            width: auto !important;
+            max-width: 100%;
+        }
+    
+        img {
+            max-width: 52%;
+            margin-left: auto !important;
+            margin-right: auto !important;
+            display: block;
+            min-height: 0 !important;
+        }
+    
+        img:not([src]) {
+            width: 52% !important; /* make sure empty images still show up */
+        }
+    
+        iframe {
+            width: 100% !important;
+        }
+    }
+    </style>
+    <script>
+    
+    </script>
+</head>
+<body class="full-width">
+    <div class="section full-width b-0">
+        <div class="column full-width layout-493830713661114">
+            <div class="section b-0-0-0">
+                <div class="content">
+                    <div class="column text-6243978519830329">
+                        <div>BLOG&nbsp; TITLE&nbsp;</div>
+                    </div>
+                </div>
+            </div>
+            <div class="section b-0-0-1">
+                <div class="content">
+                    <div class="column text-08641163098856852">
+                        <div>ABOUT ME &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;ARCHIVE &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;CONTACT</div>
+                    </div>
+                </div>
+            </div>
+            <div class="section b-0-0-2">
+                <div class="content">
+                    <img class="column image-5100161907843876" src="https://ucarecdn.com/5be66e7a-074c-4e11-b163-3bbd193b484f/" /> 
+                    <img class="column image-5205237804820233" src="https://ucarecdn.com/5be66e7a-074c-4e11-b163-3bbd193b484f/" /> 
+                    <img class="column image-5977604736289774" src="https://ucarecdn.com/5be66e7a-074c-4e11-b163-3bbd193b484f/" /> 
+                    <img class="column image-5451970893743281" src="https://ucarecdn.com/5be66e7a-074c-4e11-b163-3bbd193b484f/" /> 
+                    <img class="column image-03852373009412324" src="https://ucarecdn.com/5be66e7a-074c-4e11-b163-3bbd193b484f/" /> 
+                    <img class="column image-02652372092366284" src="https://ucarecdn.com/5be66e7a-074c-4e11-b163-3bbd193b484f/" /> 
+                </div>
+            </div>
+            <div class="section b-0-0-3">
+                <div class="content">
+                    <div class="column text-8087621577719633">
+                        <div>ENTRY TITLE</div>
+                    </div>
+                    <div class="column b-0-0-3-1">
+                        <div class="section b-0-0-3-1-0">
+                            <div class="column text-19997884417218126">
+                                <div>7 MAY 2016</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section full-width b-0-0-4">
+                <div class="column full-width layout-39268181529503066">
+                    <div class="section b-0-0-4-0-0">
+                        <div class="content">
+                            <div class="column b-0-0-4-0-0-0">
+                                <div class="section b-0-0-4-0-0-0-0">
+                                    <img class="column image-9920844072763388" src="https://ucarecdn.com/6fcf1cf1-641d-4d6a-8495-eec0c52557a8/" /> 
+                                </div>
+                            </div>
+                            <div class="column b-0-0-4-0-0-1">
+                                <div class="section b-0-0-4-0-0-1-0">
+                                    <div class="column text-5320398504312698">
+                                        <div>NEXT</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column text-5262554756531714">
+                                <div>Text!!! Writing whatever because this is an example and I don't have much to write about besides that Pagedraw is really cool and I hope I finish this design before my 17% of battery runs out because I'm on an airplane without any outlets and I won't have time to send this to you guys after I land, so wish me luck!!!</div>
+                            </div>
+                            <div class="column b-0-0-4-0-0-3">
+                                <div class="section b-0-0-4-0-0-3-0">
+                                    <div class="column text-0468601400898645">
+                                        <div>PREVIOUS</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column b-0-0-4-0-0-4">
+                                <div class="section b-0-0-4-0-0-4-0">
+                                    <img class="column image-47231286038309817" src="https://ucarecdn.com/18930bdc-46ef-4bbf-8706-4e7a21e1126a/" /> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="section b-0-0-4-0-1">
+                        <div class="content">
+                            <div class="column text-325680083626384">
+                                <div>BLOG TITLE</div><div><br></div><div>ABOUT ME &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;ARCHIVE &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;CONTACT</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
